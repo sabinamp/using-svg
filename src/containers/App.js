@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Home from '../components/Home'
+import Home from '../components/SVGAnimContainer1'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer';
 import Content from '../components/layout/Content';

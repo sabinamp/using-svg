@@ -132,7 +132,7 @@ export default class Signature extends HTMLElement {
     return `
       <style>
         :host {
-          height: 100vh;
+          height: 50vh;
           display: flex;
           background: ${this.getAttribute('bkgcolor')};
           align-items: center;
@@ -143,8 +143,8 @@ export default class Signature extends HTMLElement {
           --stroke-color: ${this.getAttribute('fillcolor')};
         }        
         #signature {
-          width:  60vw;
-          height: 50vh;          
+          width:  24vw;
+          height: 20vh;          
       }
       svg {
           width:  100%; /* try to fill 1/2 of the container but keep aspect ratio */
