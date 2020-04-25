@@ -5,7 +5,8 @@ import Signature from '../../webcomponents/signature-custom-elem/Signature'
 export default class SignatureR extends Component {
   static propTypes = {
     strokewidth: PropTypes.string.isRequired,
-    fillcolor: PropTypes.string.isRequired
+    fillcolor: PropTypes.string.isRequired,
+    bkgcolor: PropTypes.string.isRequired
   };
 
   componentDidMount() {
@@ -17,7 +18,8 @@ export default class SignatureR extends Component {
     };
     return (
       <div style={borderStyle}>
-        <signature-element strokewidth={this.props.strokewidth} fillcolor={this.props.fillcolor}></signature-element>
+        <signature-element strokewidth={this.props.strokewidth} fillcolor={this.props.fillcolor} bkgcolor={this.props.bkgcolor}>
+        </signature-element>
       </div>
     );
   }

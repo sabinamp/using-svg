@@ -1,7 +1,7 @@
 export default class Signature extends HTMLElement {
   // Specify observed attributes so that
   // attributeChangedCallback will work
-  static get observedAttributes() { return ['strokewidth', 'fillcolor']; }
+  static get observedAttributes() { return ['strokewidth', 'fillcolor', 'bkgcolor']; }
 
   constructor() {
     super();
@@ -60,9 +60,13 @@ export default class Signature extends HTMLElement {
     if (name === 'fillcolor') {
       this.fillcolor = newValue;
     }
+    if (name === 'bkgcolor') {
+      this.bkgcolor = newValue;
+    }
     // Lets re-render after getting the new attributes
     this.render();
-    console.log("fillcolor: " + this.fillcolor + "; strokewidth: " + this.strokewidth);
+    console.log("fillcolor: " + this.fillcolor + "; strokewidth: " + this.strokewidth
+      + "background color: " + this.bkgcolor);
   }
 
   render() {
@@ -129,10 +133,10 @@ export default class Signature extends HTMLElement {
         :host {
           height: 100vh;
           display: flex;
-          background: #222;
+          background: ${this.getAttribute('bkgcolor')};
           align-items: center;
           justify-content: center;
-          padding: 0 10px;
+          padding: 0 5px;
           --stroke-width: ${this.getAttribute('strokewidth')};
           --stroke-opacity: 1;
           --stroke-color: ${this.getAttribute('fillcolor')};
