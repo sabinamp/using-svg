@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './SignatureR2.css';
-import { findDOMNode } from 'react-dom';
+
 
 
 const svgStyle = {
@@ -20,16 +20,6 @@ const svgPathStyle = {
   strokeLinecap: 'round',
   stroke: 'cyan',
 };
-
-const SignatureSVG = `
-<svg viewBox="0 -2 43 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="path0" d="M18 12V45" stroke="black" />
-<path id="path1" d="M35 4C35 4 19.5 24 19.5 28.5C19.5 33 38.5 56 38.5 56" stroke="black" />
-<path id="path2"
-  d="M1.00002 14C2.24347 7.31013 30 13 9.00002 2C21.2046 -0.449153 26.0539 2.28554 33 8.5C45 19.236 44.5 43 33 52.5C21.5 62 14 55 6.99999 54"
-  stroke="black" />
-</svg>
-`;
 
 
 export default class SignatureR2 extends Component {
@@ -68,6 +58,7 @@ export default class SignatureR2 extends Component {
     this.signatureRef.current.addEventListener('click', (e) => this.handleClick());
 
   }
+
   componentWillUnmount() {
     this.signatureRef.current.removeEventListener('click', (e) => this.handleClick());
   }

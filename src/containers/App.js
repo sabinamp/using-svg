@@ -5,6 +5,7 @@ import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer';
 import Content from '../components/layout/Content';
 import SignatureR2 from '../components/signature/SignatureR2';
+import SVGAnimationContainer2 from '../components/SVGAnimContainer2';
 
 
 
@@ -15,7 +16,7 @@ function App() {
       <Content>
         <>
           <Home />
-          <SignatureR2 />
+          <SVGAnimationContainer2 />
         </>
       </Content>
       <Footer />
