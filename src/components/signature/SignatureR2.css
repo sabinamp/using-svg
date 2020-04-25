@@ -1,0 +1,32 @@
+.SignatureR2{
+  border: 1px solid white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --stroke-width: 2;
+  --stroke-opacity:1;
+  --stroke-color: green;
+}
+
+.SignatureR2 .anim {
+  transform: rotate(20deg) scaleX(2);
+  transition: transform ease-out 2.5s;
+  transition-delay: .5s;
+}
+
+ #signature {
+  width:  60vw;
+  height: 50vh;          
+} 
+.SignatureR2 svg {
+  width:  100%; /* try to fill the container but keep aspect ratio */
+  height: 100%;
+  filter: drop-shadow(0px 0px 1em var(--stroke-color));
+}
+.SignatureR2 svg path {
+  stroke-width: var(--stroke-width);
+  stroke-opacity: var(--stroke-opacity);
+  stroke-linecap: round;
+  stroke: var(--stroke-color);
+}
