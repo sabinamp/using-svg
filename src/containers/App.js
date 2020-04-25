@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import Home from '../components/SVGAnimContainer1'
+
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer';
 import Content from '../components/layout/Content';
-import SignatureR2 from '../components/signature/SignatureR2';
+
 import SVGAnimationContainer2 from '../components/SVGAnimContainer2';
+import SVGAnimContainer1 from '../components/SVGAnimContainer1';
 
 
 
@@ -15,7 +16,7 @@ function App() {
       <Header title="Integrate SVG animation into React" />
       <Content>
         <>
-          <Home />
+          <SVGAnimContainer1 />
           <SVGAnimationContainer2 />
         </>
       </Content>
