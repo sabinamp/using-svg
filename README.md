@@ -13,6 +13,7 @@ The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 ## App Info
+if you don't need any dynamic data or local state then you should consider using a stateless component.
 PropTypes validations are very important PropTypes is used to document the intended types of properties passed to components. React will check the props passed to your components against those definitions, and it will send a warning in development if they don't match. (npm i prop-types)
 components
 - layout: Header, Footer, Content

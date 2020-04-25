@@ -11,11 +11,9 @@ function App() {
     <div className="App">
       <Header title="Integrate SVG animation into React" />
       <Content>
-        <>
-          <Home />
 
+        <Home />
 
-        </>
       </Content>
       <Footer />
     </div>
