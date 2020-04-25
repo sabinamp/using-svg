@@ -9,10 +9,6 @@ export default class Signature extends HTMLElement {
     this.fillcolor = '';
     // lets create our shadow root
     this.shadowObj = this.attachShadow({ mode: 'open' });
-
-    // Then lets render the template
-    //this.render();
-
   }
 
   //gets invoked every time a copy of a Web Component gets added to the DOM
