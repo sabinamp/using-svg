@@ -13,7 +13,7 @@ The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 ## App Info
-PropTypes validations are very important for developers because they force us to define which type of prop we are going to receive in our components and validate whether some of them are required or not.
+PropTypes validations are very important PropTypes is used to document the intended types of properties passed to components. React will check the props passed to your components against those definitions, and it will send a warning in development if they don't match. (npm i prop-types)
 components
 - layout: Header, Footer, Content
    * sending the title prop to Header because it is the only one that is required.
