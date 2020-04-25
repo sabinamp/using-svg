@@ -12,8 +12,11 @@ export default class SignatureR extends Component {
     customElements.define('signature-element', Signature);
   }
   render() {
+    const borderStyle = {
+      border: '1px solid white',
+    };
     return (
-      <div>
+      <div style={borderStyle}>
         <signature-element strokewidth={this.props.strokewidth} fillcolor={this.props.fillcolor}></signature-element>
       </div>
     );
