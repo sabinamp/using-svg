@@ -11,7 +11,10 @@ export default class SignatureR extends Component {
   };
 
   componentDidMount() {
-    customElements.define('signature-element', Signature);
+    if (!customElements.get('signature-element')) {
+      customElements.define('signature-element', Signature);
+    }
+
   }
   render() {
     const borderStyle = {
