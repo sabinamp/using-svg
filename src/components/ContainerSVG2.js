@@ -9,7 +9,7 @@ export default class ContainerSVG2 extends Component {
         <p>
           the SVG animation added as a Web Component
         </p>
-        <SignatureR strokewidth="2.5" fillcolor="#f6c90e" bkgcolor="#3a4750" strokeopacity="1" />
+        <SignatureR strokewidth="2.5" fillcolor="#d6f6f2" bkgcolor="#303841" strokeopacity="1" />
 
       </div>)
   }
