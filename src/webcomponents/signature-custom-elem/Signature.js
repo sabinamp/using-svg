@@ -53,11 +53,11 @@ export default class Signature extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
     console.log('Custom element attributes changed.');
 
-    if (name == 'strokewidth') {
+    if (name === 'strokewidth') {
       this.strokewidth = newValue;
     }
 
-    if (name == 'fillcolor') {
+    if (name === 'fillcolor') {
       this.fillcolor = newValue;
     }
     // Lets re-render after getting the new attributes

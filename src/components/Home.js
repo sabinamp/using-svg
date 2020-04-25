@@ -7,8 +7,9 @@ export default class Home extends Component {
         <h1> SVG animation</h1>
 
         <p>
-          the SVG animation added as a Web Component or as a React Component
+          the SVG animation added as a Web Component
         </p>
+
       </div>)
   }
 }
