@@ -1,16 +1,18 @@
 import React from 'react';
-import logo from '../images/logo.svg';
 import './App.css';
 import Home from '../components/Home'
+import Header from '../components/layout/Header'
+import Footer from '../components/layout/Footer';
+import Content from '../components/layout/Content';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
-      </header>
-      <Home></Home>
+      <Header title="Integrate SVG animation into React" />
+      <Content>
+        <Home />
+      </Content>
+      <Footer />
     </div>
   );
 }
