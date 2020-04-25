@@ -1,7 +1,7 @@
 export default class Signature extends HTMLElement {
   // Specify observed attributes so that
   // attributeChangedCallback will work
-  static get observedAttributes() { return ['strokewidth', 'fillcolor', 'bkgcolor']; }
+  static get observedAttributes() { return ['strokewidth', 'fillcolor', 'bkgcolor', 'strokeopacity']; }
 
   constructor() {
     super();
@@ -63,17 +63,18 @@ export default class Signature extends HTMLElement {
     if (name === 'bkgcolor') {
       this.bkgcolor = newValue;
     }
+    if (name === 'strokeopacity') {
+      this.strokeopacity = newValue;
+    }
     // Lets re-render after getting the new attributes
     this.render();
     console.log("fillcolor: " + this.fillcolor + "; strokewidth: " + this.strokewidth
-      + "background color: " + this.bkgcolor);
+      + "background color: " + this.bkgcolor + "stroke opacity: " + this.strokeopacity);
   }
 
   render() {
     this.shadowObj.innerHTML = this.getTemplate();
-
   }
-
 
 
   animateStroke = n => fraction => {
@@ -136,15 +137,14 @@ export default class Signature extends HTMLElement {
           background: ${this.getAttribute('bkgcolor')};
           align-items: center;
           justify-content: center;
-          padding: 0 5px;
+          padding: 0 4px;
           --stroke-width: ${this.getAttribute('strokewidth')};
-          --stroke-opacity: 1;
+          --stroke-opacity: ${this.getAttribute('strokeopacity')};
           --stroke-color: ${this.getAttribute('fillcolor')};
         }        
         #signature {
           width:  60vw;
-          height: 50vh;
-          
+          height: 50vh;          
       }
       svg {
           width:  100%; /* try to fill 1/2 of the container but keep aspect ratio */
