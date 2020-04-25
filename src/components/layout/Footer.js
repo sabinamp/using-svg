@@ -1,7 +1,8 @@
 import React from 'react';
+import './Footer.css'
 
 const Footer = () => (
-  <footer>&copy; Web Clients. Sabina Maria Borbély {(new Date()).getFullYear()}
+  <footer className="Footer">&copy; Web Clients. Sabina Maria Borbély {(new Date()).getFullYear()}
   </footer>
 )
 

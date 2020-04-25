@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../containers/App.css';
+import './Header.css';
 import PropTypes from 'prop-types';
 class Header extends Component {
   static propTypes = {
@@ -10,8 +10,8 @@ class Header extends Component {
     const { title } = this.props;
 
     return (
-      <header className="App-header">
-        <h1 className="App-title">{title}</h1>
+      <header className="Header">
+        <h1>{title}</h1>
       </header>
     );
   }
