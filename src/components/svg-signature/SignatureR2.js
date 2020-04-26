@@ -4,6 +4,7 @@ import './SignatureR2.css';
 
 
 export default class SignatureR2 extends Component {
+
   static propTypes = {
     strokewidth: PropTypes.string.isRequired,
     fillcolor: PropTypes.string.isRequired,
@@ -25,7 +26,7 @@ export default class SignatureR2 extends Component {
     this.path2Ref = React.createRef();
     this.signatureRef = React.createRef();
 
-
+    /* our JavaScript and CSS are tied slightly more together now, as they both need to be aware of what CSS custom variables we use. This is certainly a trade-off but it’s one we are willing to make. */
     this.theme = {
       "--stroke-opacity": props.strokeopacity,
       "--stroke-color": props.fillcolor,
@@ -130,4 +131,3 @@ export default class SignatureR2 extends Component {
     );
   }
 }
-/* our JavaScript and CSS are tied slightly more together now because they both need to be aware of what CSS variables we use. This is certainly a trade-off but it’s one we were willing to make. */
