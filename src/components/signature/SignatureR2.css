@@ -1,13 +1,16 @@
-.SignatureR2{
+ .SignatureR2{
   border: 1px solid white;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  --stroke-width: 2;
+ /* 
+  --bkg-color: #e7eff3;
+  --stroke-width: 3;
   --stroke-opacity:1;
-  --stroke-color: green;
-}
+  --stroke-color: #1b3c59; */
+  background: var(--bkg-color);
+} 
 
 .SignatureR2 .anim {
   transform: rotate(20deg) scaleX(2);

@@ -1,43 +1,36 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './SignatureR2.css';
-
-
-
-const svgStyle = {
-  width: '100%', /* try to fill the container but keep aspect ratio */
-  height: '100%',
-  filter: 'drop-shadow(0px 0px 1em cyan)'
-};
-const signatureStyle = {
-  width: '60vw',
-  height: '50vh',
-};
-
-const svgPathStyle = {
-  strokeWidth: '3px',
-  strokeOpacity: '1',
-  strokeLinecap: 'round',
-  stroke: 'cyan',
-};
-
+import '../CssVariableApplicator'
 
 export default class SignatureR2 extends Component {
-  /*   static propTypes = {
-      strokewidth: PropTypes.string.isRequired,
-      fillcolor: PropTypes.string.isRequired,
-      bkgcolor: PropTypes.string.isRequired,
-      strokeopacity: PropTypes.string.isRequired
-    }; */
-  constructor() {
-    super();
-    this.pathInfo = [{ path: '' },
-    { path: '' },
-    { path: '' },]
+  static propTypes = {
+    strokewidth: PropTypes.string.isRequired,
+    fillcolor: PropTypes.string.isRequired,
+    bkgcolor: PropTypes.string.isRequired,
+    strokeopacity: PropTypes.string.isRequired
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.pathInfo = [
+      { path: '' },
+      { path: '' },
+      { path: '' }];
     this.path0Ref = React.createRef();
     this.path1Ref = React.createRef();
     this.path2Ref = React.createRef();
     this.signatureRef = React.createRef();
+
+    /* const { strokeopacity, fillcolor, strokewidth, bkgcolor } = props; */
+
+    this.theme = {
+      "--stroke-opacity": props.strokeopacity,
+      "--stroke-color": props.fillcolor,
+      "--stroke-width": props.strokewidth,
+      "--bkg-color": props.bkgcolor,
+    };
   }
 
   componentDidMount() {
@@ -55,12 +48,26 @@ export default class SignatureR2 extends Component {
 
     });
 
+    this.updateCSSCustomProperties(this.props);
+
     this.signatureRef.current.addEventListener('click', (e) => this.handleClick());
 
+  }
+  componentDidUpdate(prevProps) {
+    if (this.props !== prevProps) {
+      this.updateCSSCustomProperties(this.props);
+    }
   }
 
   componentWillUnmount() {
     this.signatureRef.current.removeEventListener('click', (e) => this.handleClick());
+  }
+
+  updateCSSCustomProperties = (props) => {
+    for (let customprop of Object.entries(props)) {
+      document.documentElement.style.setProperty(customprop.prop, customprop.value)
+    }
+
   }
 
   linear = x => x;
@@ -105,12 +112,21 @@ export default class SignatureR2 extends Component {
     console.log("clicked the signature id");
   }
 
+
   render() {
+    /*  let cssProperties = {};
+ 
+     const { strokeopacity, fillcolor, strokewidth, bkgcolor } = this.props;
+ 
+     cssProperties["--stroke-opacity"] = { strokeopacity };
+     cssProperties["--stroke-color"] = { fillcolor };
+     cssProperties["--stroke-width"] = { strokewidth };
+     cssProperties["--bkgcolor"] = { bkgcolor }; */
 
     return (
-      <div className="SignatureR2">
+      <div className="SignatureR2" style={this.theme} >
         <div id="signature" ref={this.signatureRef} >
-          <svg viewBox="0 -2 43 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 -2 43 62" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path id="path0" ref={this.path0Ref} d="M18 12V45" stroke="black" />
             <path id="path1" ref={this.path1Ref} d="M35 4C35 4 19.5 24 19.5 28.5C19.5 33 38.5 56 38.5 56" stroke="black" />
             <path id="path2" ref={this.path2Ref}
@@ -122,3 +138,4 @@ export default class SignatureR2 extends Component {
     );
   }
 }
+/* our JavaScript and CSS are tied slightly more together now because they both need to be aware of what CSS variables we use. This is certainly a trade-off but it’s one we were willing to make. */
