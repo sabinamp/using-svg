@@ -4,12 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;  
-
- /* 
-  --bkg-color: #e7eff3;
-  --stroke-width: 3;
-  --stroke-opacity:1;
-  --stroke-color: #1b3c59; */
   background: var(--bkg-color);
 } 
 
@@ -20,8 +14,8 @@
 }
 
  #signature {
-  width: 42vw;
-  height: 35vh;          
+  width: var(--signature-width);
+  height: var(--signature-height);          
 } 
 
 .SignatureR2 svg {

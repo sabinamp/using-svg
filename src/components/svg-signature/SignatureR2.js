@@ -8,7 +8,9 @@ export default class SignatureR2 extends Component {
     strokewidth: PropTypes.string.isRequired,
     fillcolor: PropTypes.string.isRequired,
     bkgcolor: PropTypes.string.isRequired,
-    strokeopacity: PropTypes.string.isRequired
+    strokeopacity: PropTypes.string.isRequired,
+    signaturewidth: PropTypes.string.isRequired,
+    signatureheight: PropTypes.string.isRequired,
   };
 
   constructor(props) {
@@ -23,18 +25,18 @@ export default class SignatureR2 extends Component {
     this.path2Ref = React.createRef();
     this.signatureRef = React.createRef();
 
-    /* const { strokeopacity, fillcolor, strokewidth, bkgcolor } = props; */
 
     this.theme = {
       "--stroke-opacity": props.strokeopacity,
       "--stroke-color": props.fillcolor,
       "--stroke-width": props.strokewidth,
       "--bkg-color": props.bkgcolor,
+      "--signature-width": props.signaturewidth,
+      "--signature-height": props.signatureheight
     };
   }
 
   componentDidMount() {
-
     this.pathInfo = [
       { path: this.path0Ref.current },
       { path: this.path1Ref.current },
@@ -51,8 +53,8 @@ export default class SignatureR2 extends Component {
     this.updateCSSCustomProperties(this.props);
 
     this.signatureRef.current.addEventListener('click', (e) => this.handleClick());
-
   }
+
   componentDidUpdate(prevProps) {
     if (this.props !== prevProps) {
       this.updateCSSCustomProperties(this.props);
@@ -67,7 +69,6 @@ export default class SignatureR2 extends Component {
     for (let customprop of Object.entries(props)) {
       document.documentElement.style.setProperty(customprop.prop, customprop.value)
     }
-
   }
 
   linear = x => x;
@@ -109,19 +110,10 @@ export default class SignatureR2 extends Component {
   handleClick = () => {
     this.signatureRef.current.classList.add('anim');
     this.signature();
-    console.log("clicked the signature id");
   }
 
 
   render() {
-    /*  let cssProperties = {};
- 
-     const { strokeopacity, fillcolor, strokewidth, bkgcolor } = this.props;
- 
-     cssProperties["--stroke-opacity"] = { strokeopacity };
-     cssProperties["--stroke-color"] = { fillcolor };
-     cssProperties["--stroke-width"] = { strokewidth };
-     cssProperties["--bkgcolor"] = { bkgcolor }; */
 
     return (
       <div className="SignatureR2" style={this.theme} >

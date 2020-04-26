@@ -40,7 +40,6 @@ export default class Signature extends HTMLElement {
   handleClick() {
     this.shadowObj.querySelector('#signature').classList.add('anim');
     this.signature();
-    console.log("clicked the signature id");
   }
 
   disconnectedCallback() {
@@ -53,8 +52,6 @@ export default class Signature extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    console.log('Custom element attributes changed.');
-
     if (name === 'strokewidth') {
       this.strokewidth = newValue;
     }
@@ -141,7 +138,7 @@ export default class Signature extends HTMLElement {
     return `
       <style>
         :host {
-          height: 50vh;
+          height: 70vh;
           display: flex;
           background: ${this.getAttribute('bkgcolor')};
           align-items: center;
@@ -151,8 +148,6 @@ export default class Signature extends HTMLElement {
           --stroke-color: ${this.getAttribute('fillcolor')};
         }        
         #signature {
-         /*  width:  30vw;
-          height: 25vh;   */   
           width:  ${this.getAttribute('signaturewidth')}; 
           height: ${this.getAttribute('signatureheight')};
       }
