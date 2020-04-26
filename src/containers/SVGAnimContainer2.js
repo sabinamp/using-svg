@@ -1,6 +1,6 @@
 import React from 'react';
 import './SVGAnimContainer2.css'
-import SignatureR2 from './signature/SignatureR2';
+import SignatureR2 from '../components/svg-signature/SignatureR2';
 
 const SVGAnimationContainer2 = () => (
 

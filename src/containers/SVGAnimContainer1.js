@@ -1,6 +1,6 @@
 import React from 'react';
 import './SVGAnimContainer1.css'
-import SignatureR from './signature/SignatureR';
+import SignatureR from '../components/svg-signature/SignatureR';
 
 const SVGAnimContainer1 = () => (
   <div className="Container1">
@@ -13,4 +13,4 @@ const SVGAnimContainer1 = () => (
     <SignatureR strokewidth="2.5" fillcolor="#d6f6f2" bkgcolor="#303841" strokeopacity="1" signaturewidth="30vw" signatureheight="25vh" className="section-col3" />
   </div>)
 
-export default SVGAnimContainer1
+export default SVGAnimContainer1;

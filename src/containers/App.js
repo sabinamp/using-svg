@@ -5,8 +5,8 @@ import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer';
 import Content from '../components/layout/Content';
 
-import SVGAnimationContainer2 from '../components/SVGAnimContainer2';
-import SVGAnimContainer1 from '../components/SVGAnimContainer1';
+import SVGAnimationContainer2 from './SVGAnimContainer2';
+import SVGAnimContainer1 from './SVGAnimContainer1';
 
 
 
