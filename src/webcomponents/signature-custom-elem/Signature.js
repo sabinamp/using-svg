@@ -1,7 +1,9 @@
 export default class Signature extends HTMLElement {
   // Specify observed attributes so that
   // attributeChangedCallback will work
-  static get observedAttributes() { return ['strokewidth', 'fillcolor', 'bkgcolor', 'strokeopacity']; }
+  static get observedAttributes() {
+    return ['strokewidth', 'fillcolor', 'bkgcolor', 'strokeopacity', 'signaturewidth', 'signatureheight'];
+  }
 
   constructor() {
     super();
@@ -66,6 +68,13 @@ export default class Signature extends HTMLElement {
     if (name === 'strokeopacity') {
       this.strokeopacity = newValue;
     }
+    if (name === 'signaturewidth') {
+      this.signaturewidth = newValue;
+    }
+    if (name === 'signatureheight') {
+      this.signatureheight = newValue;
+    }
+
     // Lets re-render after getting the new attributes
     this.render();
     console.log("fillcolor: " + this.fillcolor + "; strokewidth: " + this.strokewidth
@@ -142,8 +151,10 @@ export default class Signature extends HTMLElement {
           --stroke-color: ${this.getAttribute('fillcolor')};
         }        
         #signature {
-          width:  24vw;
-          height: 20vh;          
+         /*  width:  30vw;
+          height: 25vh;   */   
+          width:  ${this.getAttribute('signaturewidth')}; 
+          height: ${this.getAttribute('signatureheight')};
       }
       svg {
           width:  100%; /* try to fill 1/2 of the container but keep aspect ratio */

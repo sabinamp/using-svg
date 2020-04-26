@@ -7,7 +7,9 @@ export default class SignatureR extends Component {
     strokewidth: PropTypes.string.isRequired,
     fillcolor: PropTypes.string.isRequired,
     bkgcolor: PropTypes.string.isRequired,
-    strokeopacity: PropTypes.string.isRequired
+    strokeopacity: PropTypes.string.isRequired,
+    signaturewidth: PropTypes.string.isRequired,
+    signatureheight: PropTypes.string.isRequired
   };
 
   componentDidMount() {
@@ -20,9 +22,13 @@ export default class SignatureR extends Component {
     const borderStyle = {
       border: '1px solid white',
     };
+    const { strokewidth, fillcolor, bkgcolor, strokeopacity, signaturewidth, signatureheight } = this.props;
+
     return (
       <div style={borderStyle}>
-        <signature-element strokewidth={this.props.strokewidth} fillcolor={this.props.fillcolor} bkgcolor={this.props.bkgcolor} strokeopacity={this.props.strokeopacity}>
+        <signature-element strokewidth={strokewidth} fillcolor={fillcolor}
+          bkgcolor={bkgcolor} strokeopacity={strokeopacity}
+          signaturewidth={signaturewidth} signaturewidth={signatureheight}>
         </signature-element>
       </div>
     );
