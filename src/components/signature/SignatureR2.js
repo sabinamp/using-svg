@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './SignatureR2.css';
-import '../CssVariableApplicator'
+
 
 export default class SignatureR2 extends Component {
   static propTypes = {
