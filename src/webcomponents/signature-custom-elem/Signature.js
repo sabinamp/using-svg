@@ -136,8 +136,7 @@ export default class Signature extends HTMLElement {
           display: flex;
           background: ${this.getAttribute('bkgcolor')};
           align-items: center;
-          justify-content: center;
-          padding: 0 4px;
+          justify-content: center;        
           --stroke-width: ${this.getAttribute('strokewidth')};
           --stroke-opacity: ${this.getAttribute('strokeopacity')};
           --stroke-color: ${this.getAttribute('fillcolor')};

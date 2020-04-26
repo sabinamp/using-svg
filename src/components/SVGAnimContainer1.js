@@ -3,7 +3,7 @@ import './SVGAnimContainer1.css'
 import SignatureR from './signature/SignatureR';
 
 const SVGAnimContainer1 = () => (
-  <div className="Home">
+  <div className="Container1">
     <h1> SVG Signature Animation</h1>
     <p>
       The Signature React component  behaves as a wrapper for my signature Web Component.

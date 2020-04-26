@@ -126,7 +126,7 @@ export default class SignatureR2 extends Component {
     return (
       <div className="SignatureR2" style={this.theme} >
         <div id="signature" ref={this.signatureRef} >
-          <svg viewBox="0 -2 43 62" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 -2 43 62" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path id="path0" ref={this.path0Ref} d="M18 12V45" stroke="black" />
             <path id="path1" ref={this.path1Ref} d="M35 4C35 4 19.5 24 19.5 28.5C19.5 33 38.5 56 38.5 56" stroke="black" />
             <path id="path2" ref={this.path2Ref}

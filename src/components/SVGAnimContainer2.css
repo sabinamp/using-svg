@@ -1,6 +1,13 @@
 .Container2 {
   margin: 0 auto;
-  width: 100%;  
+  width: 100%;   
+  display: grid;
+  grid-gap: 6px;
+  grid-template-areas: 
+    "h  h"
+    "s  s"
+    "a1  a2"   
+    ;
 }
 
 .Container2 h1 {
@@ -13,6 +20,23 @@
   color: #333;
   text-align: center;
   grid-area: s;
+}
+.Container2 .section-col1{
+  grid-area: a1;
+}
+.Container2 .section-col2{
+  grid-area: a2;
+}
+
+@media(max-width: 550px) {
+  .Container2 {
+    grid-template-areas: 
+        "h"
+        "s"
+        "a1"
+        "a2"
+      ;
+  }
 }
 
 

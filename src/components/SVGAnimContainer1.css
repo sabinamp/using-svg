@@ -1,6 +1,6 @@
-.Home {
+.Container1 {
   margin: 0 auto;
-  width: 100%;
+  width: 100%;  
   display: grid;
   grid-gap: 6px;
   grid-template-areas: 
@@ -10,32 +10,37 @@
     ;
 }
 
-.Home h1 {
+.Container1 h1 {
   font-size: 1.2rem;
   color: #333;
   grid-area: h;
 }
 
-.Home p {
+.Container1 p {
   color: #333;
   text-align: center;
   grid-area: s;
 }
 
-.Home a {
-  color: #56D5FA;
-  text-decoration: none;
-}
 
-.Home a:hover {
-  color: #333;
-}
-.Home .section-col1{
+.Container1 .section-col1{
   grid-area: a1;
 }
-.Home .section-col2{
+.Container1 .section-col2{
   grid-area: a2;
 }
-.Home .section-col3{
+.Container1 .section-col3{
   grid-area: a3;
+}
+
+@media(max-width: 550px) {
+  .Container1 {
+    grid-template-areas: 
+        "h"
+        "s"
+        "a1"
+        "a2"
+        "a3"
+      ;
+  }
 }

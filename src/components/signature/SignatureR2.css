@@ -1,9 +1,10 @@
  .SignatureR2{
   border: 1px solid white;
-  height: 100vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;  
+
  /* 
   --bkg-color: #e7eff3;
   --stroke-width: 3;
@@ -19,8 +20,8 @@
 }
 
  #signature {
-  width:  60vw;
-  height: 50vh;          
+  width: 42vw;
+  height: 35vh;          
 } 
 
 .SignatureR2 svg {
