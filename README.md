@@ -15,9 +15,9 @@ SVG CSS Animation Integration in React - implemented 2 alternatives: using web c
  - stroke-width
  - opacity 
  - background 
- - width, height
+ - width, height of the signature
  * SignatureR.js React Component is a wrapper for the Signature.js web component
- *  SignatureR2.js React Component is a class component wrapping SVG
+ * SignatureR2.js React Component is a class component wrapping SVG
 
--PropTypes validations are very important PropTypes is used to document the intended types of properties passed to components. React will check the props passed to your components against those definitions, and it will send a warning in development if they don't match. (npm i prop-types)
+ PropTypes validations are very important PropTypes is used to document the intended types of properties passed to components. React will check the props passed to your components against those definitions, and it will send a warning in development if they don't match. (npm i prop-types)
 **Note: there is a short presentation pdf in the docs folder!**
