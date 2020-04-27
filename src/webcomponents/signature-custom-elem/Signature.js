@@ -7,8 +7,6 @@ export default class Signature extends HTMLElement {
 
   constructor() {
     super();
-    this.strokewidth = '';
-    this.fillcolor = '';
     // lets create our shadow root
     this.shadowObj = this.attachShadow({ mode: 'open' });
   }
@@ -84,9 +82,9 @@ export default class Signature extends HTMLElement {
 
 
   animateStroke = n => fraction => {
-    console.log("entering animateStroke()");
+    //console.log("entering animateStroke()");
     const total = this.pathInfo[n].path.getTotalLength();
-    console.log("path info[" + n + "] total:" + total);
+    //console.log("path info[" + n + "] total:" + total);
     this.pathInfo[n].path.style.strokeDashoffset = total * (1 - fraction);
   };
 
